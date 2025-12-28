@@ -113,7 +113,7 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 z-50">
             <div className={`text-2xl font-display font-bold tracking-tighter transition-colors ${logoColorClass}`}>
-              BYD <span className="text-teal-500">UTAMA</span>
+              BYD <span className="text-teal-500">Lenteng Agung</span>
             </div>
           </Link>
 

@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="md:col-span-4">
             <h2 className="text-2xl font-display font-bold tracking-tighter mb-6">
-              BYD <span className="text-teal-500">UTAMA</span>
+              BYD <span className="text-teal-500">Lenteng Agung</span>
             </h2>
             <p className="text-gray-400 leading-relaxed mb-6 max-w-sm">
               Official authorized dealer providing the future of electric mobility. Experience the innovation, safety, and luxury of BYD vehicles.
