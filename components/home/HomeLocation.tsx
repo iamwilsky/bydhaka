@@ -32,7 +32,7 @@ export const HomeLocation: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-900 dark:text-white mb-1">Alamat Dealer</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{dealerInfo.address}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Lenteng Agung, Jakarta Selatan</p>
                 </div>
               </div>
 
