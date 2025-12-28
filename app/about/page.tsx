@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
         title: `Tentang ${dealerInfo.dealerName} - Dealer Resmi 3S & Sales Consultant`,
         description: `Kenali ${dealerInfo.dealerName}, dealer resmi fasilitas 3S (Sales, Service, Sparepart). Hubungi ${dealerInfo.salesName} untuk konsultasi mobil listrik BYD profesional.`,
-        keywords: ['BYD Cibubur', 'Dealer BYD', 'Sales BYD', 'Service BYD'],
+        keywords: ['BYD Lenteng Agung', 'Dealer BYD', 'Sales BYD', 'Service BYD'],
     }
 }
 

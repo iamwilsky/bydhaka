@@ -13,13 +13,13 @@ export const ModelFAQ: React.FC<ModelFAQProps> = ({ model }) => {
     <section className="py-16 md:py-24 bg-slate-50 dark:bg-[#0B1215]">
       <div className="container mx-auto px-4 md:px-8 max-w-4xl">
         <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900 dark:text-white mb-8 text-center">
-          FAQ - {model.name} Cibubur
+          FAQ - {model.name} Lenteng Agung
         </h2>
         <div className="space-y-4">
           <div className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-100 dark:border-slate-700">
             <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
               <HelpCircle className="w-4 h-4 text-teal-500" />
-              Berapa harga OTR {model.name} di Cibubur?
+              Berapa harga OTR {model.name} di Lenteng Agung?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               Harga {model.name} dimulai dari {formatPrice(model.startingPrice)}. Harga ini berlaku untuk wilayah Jakarta (Plat B) dan sekitarnya. Hubungi kami untuk rincian diskon dan simulasi kredit.

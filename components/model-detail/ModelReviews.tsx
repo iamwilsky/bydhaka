@@ -27,7 +27,7 @@ const MOCK_REVIEWS = [
     role: "Test Drive Participant",
     rating: 5,
     date: "1 bulan lalu",
-    content: "Desain interiornya sangat futuristik, terutama layar yang bisa diputar. Pelayanan sales BYD Cibubur sangat informatif.",
+    content: "Desain interiornya sangat futuristik, terutama layar yang bisa diputar. Pelayanan sales BYD Lenteng Agung sangat informatif.",
     likes: 8
   },
   {
@@ -200,8 +200,8 @@ export const ModelReviews: React.FC<ModelReviewsProps> = ({ model }) => {
                 <div
                   key={idx}
                   className={`h-1.5 rounded-full transition-all duration-500 ${currentIndex === idx
-                      ? 'w-8 bg-teal-500'
-                      : 'w-2 bg-gray-200 dark:bg-slate-700'
+                    ? 'w-8 bg-teal-500'
+                    : 'w-2 bg-gray-200 dark:bg-slate-700'
                     }`}
                 />
               ))}

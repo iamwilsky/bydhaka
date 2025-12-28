@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'Byd Cibubur',
-        short_name: 'Byd Cibubur',
-        description: 'Dealer Resmi BYD Cibubur. Wujudkan impian mobil listrik Anda dengan teknologi BYD Blade Battery.',
+        name: 'BYD Lenteng Agung',
+        short_name: 'BYD Lenteng Agung',
+        description: 'Dealer Resmi BYD Lenteng Agung. Wujudkan impian mobil listrik Anda dengan teknologi BYD Blade Battery.',
         start_url: '/',
         display: 'standalone',
         background_color: '#0f172a',

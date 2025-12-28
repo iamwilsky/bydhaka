@@ -38,8 +38,8 @@ export const VariantHeader: React.FC<VariantHeaderProps> = ({ model, variant, ha
                 </div>
                 <p className="text-xs text-gray-400 mt-1 uppercase tracking-widest font-medium">
                     {variant.originalPrice && variant.originalPrice > variant.price
-                        ? 'Harga Nett (OTR Cibubur)'
-                        : 'Harga OTR Cibubur (Estimasi)'}
+                        ? 'Harga Nett (OTR Lenteng Agung)'
+                        : 'Harga OTR Lenteng Agung (Estimasi)'}
                 </p>
             </div>
         </div>

@@ -11,7 +11,7 @@ export const LocationMap: React.FC = () => {
       <section className="h-96 w-full relative">
          <iframe
             title="Lokasi Dealer"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.341680696989!2d106.92051667586522!3d-6.350320962121336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d350616b39d%3A0x7d6c6e76865231c5!2sJl.%20Alternatif%20Cibubur%20No.41%2C%20Jatikarya%2C%20Kec.%20Jatisampurna%2C%20Kota%20Bks%2C%20Jawa%20Barat%2017435!5e0!3m2!1sen!2sid!4v1709600000000!5m2!1sen!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.341680696989!2d106.92051667586522!3d-6.350320962121336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d350616b39d%3A0x7d6c6e76865231c5!2sJl.%20Alternatif%20Lenteng Agung%20No.41%2C%20Jatikarya%2C%20Kec.%20Jatisampurna%2C%20Kota%20Bks%2C%20Jawa%20Barat%2017435!5e0!3m2!1sen!2sid!4v1709600000000!5m2!1sen!2sid"
             className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 border-0"
             allowFullScreen={true}
             loading="lazy"

@@ -7,9 +7,9 @@ import { PriceListContent } from './PriceListContent'
 export const revalidate = 300
 
 export const metadata: Metadata = {
-    title: 'Daftar Harga Mobil BYD Terbaru - Pricelist OTR Cibubur, Jakarta & Depok',
-    description: 'Cek Pricelist BYD terbaru. Daftar harga OTR BYD Sealion 7, Seal, Atto 3, dan Dolphin. Dapatkan info promo, diskon, dan simulasi kredit DP ringan di BYD Cibubur.',
-    keywords: ['Harga BYD', 'Pricelist BYD', 'Harga BYD Seal', 'Harga BYD Atto 3', 'Harga BYD Dolphin', 'BYD Cibubur'],
+    title: 'Daftar Harga Mobil BYD Terbaru - Pricelist OTR Lenteng Agung, Jakarta & Depok',
+    description: 'Cek Pricelist BYD terbaru. Daftar harga OTR BYD Sealion 7, Seal, Atto 3, dan Dolphin. Dapatkan info promo, diskon, dan simulasi kredit DP ringan di BYD Lenteng Agung.',
+    keywords: ['Harga BYD', 'Pricelist BYD', 'Harga BYD Seal', 'Harga BYD Atto 3', 'Harga BYD Dolphin', 'BYD Lenteng Agung'],
 }
 
 export default async function PriceListPage() {

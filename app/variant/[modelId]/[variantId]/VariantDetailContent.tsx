@@ -34,7 +34,7 @@ export function VariantDetailContent({ model, variant }: Props) {
     const handleShare = async () => {
         const shareData = {
             title: `BYD ${model.name} ${variant.name}`,
-            text: `Lihat spesifikasi dan harga BYD ${model.name} ${variant.name} di BYD Cibubur.`,
+            text: `Lihat spesifikasi dan harga BYD ${model.name} ${variant.name} di BYD Lenteng Agung.`,
             url: window.location.href,
         }
 

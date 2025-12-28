@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/admin',
         },
-        sitemap: 'https://bydcibubur.co.id/sitemap.xml',
+        sitemap: 'https://bydlentengagung.com/sitemap.xml',
     }
 }
