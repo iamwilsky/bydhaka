@@ -5,7 +5,7 @@ import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { MobileBottomBar } from './MobileBottomBar';
 import { LeadModal } from '@/components/ui/LeadModal';
-import { LoginModal } from '@/components/auth/LoginModal';
+
 import { ReviewModal } from '@/components/ui/ReviewModal';
 
 export const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -19,7 +19,6 @@ export const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
       <MobileBottomBar />
       <LeadModal />
       <ReviewModal />
-      <LoginModal />
     </div>
   );
 };
