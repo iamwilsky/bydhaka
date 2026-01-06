@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
     metadataBase: new URL('https://bydjakpus.com'),
     alternates: {
-        canonical: '/',
+        canonical: './',
     },
     title: {
         default: 'BYD Jakarta Pusat - Kramat Raya & Salemba | Dealer Resmi Mobil Listrik BYD',
