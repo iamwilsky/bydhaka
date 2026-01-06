@@ -22,11 +22,11 @@ export const metadata: Metadata = {
         canonical: '/',
     },
     title: {
-        default: 'BYD Jakarta | Dealer Resmi Mobil Listrik BYD - Sealion 7, Seal, Atto 3, Dolphin',
-        template: '%s | BYD Jakarta'
+        default: 'BYD Jakarta Pusat - Kramat Raya & Salemba | Dealer Resmi Mobil Listrik BYD',
+        template: '%s | BYD Jakarta Pusat'
     },
-    description: 'Kunjungi BYD Jakarta, showroom dan dealer resmi BYD Indonesia. Dapatkan penawaran harga terbaik untuk mobil listrik BYD Sealion 7, Seal, Atto 3, dan Dolphin. Test drive sekarang.',
-    keywords: ['BYD Jakarta', 'Showroom BYD Jakarta', 'Dealer BYD Jakarta', 'BYD Sealion 7', 'BYD Seal', 'BYD Atto 3', 'BYD Dolphin', 'Mobil Listrik Indonesia'],
+    description: 'Dealer Resmi BYD Jakarta Pusat di Jl. Kramat Raya, dekat Salemba & Raden Saleh. Dapatkan penawaran harga terbaik mobil listrik BYD Sealion 7, Seal, Atto 3, dan Dolphin.',
+    keywords: ['BYD Jakarta Pusat', 'BYD Kramat Raya', 'BYD Salemba', 'BYD Raden Saleh', 'Dealer BYD Jakarta', 'BYD Sealion 7', 'BYD Seal', 'BYD Atto 3', 'BYD Dolphin', 'Mobil Listrik Indonesia'],
     openGraph: {
         title: 'BYD Jakarta | Dealer Resmi Mobil Listrik BYD',
         description: 'Dealer Resmi BYD Jakarta. Wujudkan impian mobil listrik Anda dengan teknologi BYD Blade Battery. Hubungi kami untuk promo terbaru.',
@@ -104,7 +104,16 @@ export default async function RootLayout({
                 closes: '20:00'
             }
         ],
-        priceRange: '$$$'
+        priceRange: '$$$',
+        areaServed: [
+            "Salemba",
+            "Kramat Raya",
+            "Raden Saleh",
+            "Jakarta Pusat",
+            "Menteng",
+            "Cikini",
+            "Senen"
+        ]
     }
 
     return (

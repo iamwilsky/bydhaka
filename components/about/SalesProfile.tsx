@@ -38,7 +38,7 @@ export const SalesProfile: React.FC = () => {
           <div className="md:w-7/12 p-8 md:p-12 flex flex-col justify-center bg-white dark:bg-slate-800">
             <div className="mb-6">
               <span className="inline-block px-3 py-1 bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-[10px] font-bold uppercase tracking-widest rounded mb-3">
-                Official Sales Consultant
+                Sales Consultant Area Salemba & Menteng
               </span>
               <h2 className="text-4xl lg:text-5xl font-display font-bold text-slate-900 dark:text-white mb-2">
                 {dealerInfo.salesName}
@@ -59,7 +59,7 @@ export const SalesProfile: React.FC = () => {
             <div className="mb-8 relative">
               <div className="absolute top-0 left-0 w-1 h-full bg-teal-500 rounded-full"></div>
               <p className="pl-6 text-gray-600 dark:text-gray-300 italic text-lg leading-relaxed">
-                "Komitmen saya adalah memberikan pengalaman pembelian mobil listrik yang transparan, mudah, dan menyenangkan. Dari konsultasi teknis hingga after-sales, saya siap membantu Anda."
+                "Komitmen saya adalah memberikan layanan terbaik bagi warga Jakarta Pusat, khususnya area Salemba, Kramat Raya, dan Menteng. Saya siap membantu Anda menemukan mobil listrik BYD impian dengan proses yang transparan dan mudah."
               </p>
             </div>
 

@@ -3,6 +3,7 @@ import { Layout } from '@/components/layout/Layout'
 import { HomeHero } from '@/components/home/HomeHero'
 import { HomeModelShowcase } from '@/components/home/HomeModelShowcase'
 import { HomeServices } from '@/components/home/HomeServices'
+import { HomeAreaCoverage } from '@/components/home/HomeAreaCoverage'
 import { HomeLocation } from '@/components/home/HomeLocation'
 import { HomeFAQ } from '@/components/home/HomeFAQ'
 import { HomeWhyUs } from '@/components/home/HomeWhyUs'
@@ -23,6 +24,9 @@ export default function HomePage() {
 
                 {/* 3S Services Section */}
                 <HomeServices />
+
+                {/* Area Coverage Section (Local SEO) */}
+                <HomeAreaCoverage />
 
                 {/* Location & Map Section */}
                 <HomeLocation />

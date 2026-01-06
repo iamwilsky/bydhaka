@@ -18,11 +18,11 @@ export const AboutHero: React.FC = () => {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
         <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6 tracking-tight">
-          Partner Terpercaya <br />
-          <span className="text-teal-500">Perjalanan Elektrik Anda</span>
+          Dealer Resmi BYD <br />
+          <span className="text-teal-500">di Jantung Jakarta Pusat</span>
         </h1>
         <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
-          {dealerInfo.dealerName} hadir sebagai dealer resmi dengan fasilitas 3S (Sales, Service, Sparepart) untuk melayani kebutuhan kendaraan masa depan Anda.
+          {dealerInfo.dealerName} berlokasi strategis di Jl. Kramat Raya, siap melayani kebutuhan mobil listrik Anda di area Salemba, Raden Saleh, dan sekitarnya dengan fasilitas 3S lengkap.
         </p>
       </div>
     </section>

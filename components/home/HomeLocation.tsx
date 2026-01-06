@@ -22,7 +22,7 @@ export const HomeLocation: React.FC = () => {
               Kunjungi Showroom {dealerInfo.dealerName}
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-              Lokasi strategis di Jakarta Pusat, mudah diakses dari berbagai wilayah. Nikmati fasilitas 3S (Sales, Service, Spareparts) terbaik kami.
+              Lokasi strategis di Jl. Kramat Raya, hanya 5 menit dari Salemba dan Raden Saleh. Mudah diakses dari berbagai wilayah Jakarta Pusat. Nikmati fasilitas 3S (Sales, Service, Spareparts) terbaik kami.
             </p>
 
             <div className="space-y-6">

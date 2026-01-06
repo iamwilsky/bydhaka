@@ -23,7 +23,7 @@ export const LocationMap: React.FC = () => {
             <div className="text-left overflow-hidden">
                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-0.5">Kunjungi Showroom</p>
                <p className="font-bold text-slate-900 dark:text-white text-sm md:text-base leading-tight">
-                  Kramat Raya, Jakarta Pusat
+                  Jl. Kramat Raya (Dekat Salemba & Raden Saleh)
                </p>
             </div>
          </div>
