@@ -137,26 +137,7 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setUnseenLeadsCount(0);
   };
 
-  const fetchDealerInfo = async () => {
-    const { data, error } = await supabase
-      .from('dealer_info')
-      .select('*')
-      .eq('id', 1)
-      .single();
 
-    if (!error && data) {
-      setDealerInfo({
-        salesName: data.sales_name,
-        salesPhone: data.sales_phone,
-        displayPhone: data.display_phone,
-        dealerName: data.dealer_name,
-        address: data.address,
-        domain: data.domain,
-        email: data.email,
-        mapsUrl: data.maps_url
-      });
-    }
-  };
 
   const fetchStats = async () => {
     const { data, error } = await supabase
@@ -176,7 +157,7 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   useEffect(() => {
     // Initial fetch on mount (might fail for leads if not logged in due to RLS, which is expected)
     fetchLeads();
-    fetchDealerInfo();
+
     fetchStats();
     fetchPricing();
   }, []);
