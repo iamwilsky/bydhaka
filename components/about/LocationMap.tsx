@@ -11,7 +11,7 @@ export const LocationMap: React.FC = () => {
       <section className="h-96 w-full relative">
          <iframe
             title="Lokasi Dealer"
-            src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sid!4v1767662251935!5m2!1sen!2sid!6m8!1m7!1s39yRBgj5aNklooDQtXv3hA!2m2!1d-6.189324695399919!2d106.8465762134959!3f246.80394841765028!4f2.7285732178843602!5f0.7820865974627469"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.2809724680192!2d106.8465762134959!3d-6.189324695399919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f58d90bfb883%3A0xd9c709f95dcc218f!2sMazda%20Raden%20Saleh!5e0!3m2!1sen!2sid!4v1767667917821!5m2!1sen!2sid"
             className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 border-0"
             allowFullScreen={true}
             loading="lazy"

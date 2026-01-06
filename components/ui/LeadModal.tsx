@@ -66,7 +66,8 @@ export const LeadModal: React.FC = () => {
       name: formData.name,
       phone: formData.phone,
       model: `${formData.model} - ${formData.variant}`,
-      source: 'Website Form'
+      source: dealerInfo.domain,
+      salesName: dealerInfo.salesName
     });
 
     // 2. Construct WhatsApp Message using DYNAMIC dealerInfo

@@ -82,7 +82,7 @@ export interface CarModel {
   description: string;
   startingPrice: number;
   originalPrice?: number; // Added for discount display (coret harga)
-  
+
   // Visuals
   heroImage: string;
   gallery: string[];
@@ -127,6 +127,7 @@ export interface Lead {
   date: string;
   status: 'New' | 'Contacted' | 'Prospect' | 'SPK' | 'Lost';
   source: string;
+  salesName: string;
 }
 
 export interface DealerInfo {
