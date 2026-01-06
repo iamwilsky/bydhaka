@@ -28,7 +28,7 @@ export const HomeModelShowcase: React.FC<Props> = ({ initialModels }) => {
               Lineup Mobil BYD
             </h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-md">
-              Koleksi kendaraan listrik premium yang tersedia untuk Test Drive di showroom BYD Lenteng Agung.
+              Koleksi kendaraan listrik premium yang tersedia untuk Test Drive di showroom BYD Jakarta.
             </p>
           </div>
           <div className="hidden md:block h-px bg-gray-200 dark:bg-slate-800 flex-grow mx-8 mb-2" />
@@ -43,7 +43,7 @@ export const HomeModelShowcase: React.FC<Props> = ({ initialModels }) => {
                 <div className="relative overflow-hidden bg-gray-200 dark:bg-slate-700 aspect-[4/3] transform-gpu isolate p-4">
                   <img
                     src={model.heroImage}
-                    alt={`Harga ${model.name} OTR Lenteng Agung`}
+                    alt={`Harga ${model.name} OTR Jakarta`}
                     className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
 
@@ -128,7 +128,7 @@ export const HomeModelShowcase: React.FC<Props> = ({ initialModels }) => {
             </Link>
           ))}
         </div>
-        <p className="text-xs text-gray-400 mt-8 text-right">*Harga OTR Jakarta & Lenteng Agung (Dapat berubah sewaktu-waktu)</p>
+        <p className="text-xs text-gray-400 mt-8 text-right">*Harga OTR Jakarta (Dapat berubah sewaktu-waktu)</p>
       </div>
     </section>
   );

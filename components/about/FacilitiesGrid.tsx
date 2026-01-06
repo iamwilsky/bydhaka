@@ -22,7 +22,7 @@ export const FacilitiesGrid: React.FC = () => {
       {
          icon: <MapPin className="w-8 h-8 text-teal-500" />,
          title: "Lokasi Strategis",
-         desc: "Mudah diakses via Tol Jatikarya & Jalan Alternatif Lenteng Agung."
+         desc: "Lokasi strategis di Jakarta Pusat, mudah diakses dari berbagai wilayah."
       }
    ];
 

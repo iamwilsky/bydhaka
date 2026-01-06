@@ -19,10 +19,10 @@ export const HomeWhyUs: React.FC = () => {
               Keunggulan Kami
             </span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white tracking-tight mb-8">
-              Kenapa Membeli di <br />BYD Lenteng Agung?
+              Kenapa Membeli di <br />BYD Jakarta?
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-              Dealer BYD Lenteng Agung berlokasi strategis di Jl. Transyogi, siap melayani pembelian mobil listrik untuk wilayah Jatikarya, Kota Wisata, Depok, hingga Bekasi. Kami memiliki tim Sales Consultant berpengalaman yang siap membantu proses pembelian pertama Anda.
+              Dealer BYD Jakarta berlokasi strategis di Jl. Kramat Raya, siap melayani pembelian mobil listrik untuk wilayah Jakarta Pusat, Jakarta Selatan, Jakarta Timur, Depok, hingga Bekasi. Kami memiliki tim Sales Consultant berpengalaman yang siap membantu proses pembelian pertama Anda.
             </p>
 
             <Button onClick={() => openModal()} variant="primary" className="dark:bg-teal-600 dark:hover:bg-teal-700 dark:text-white dark:border-none">

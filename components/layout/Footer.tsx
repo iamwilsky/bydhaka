@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="md:col-span-4">
             <h2 className="text-2xl font-display font-bold tracking-tighter mb-6">
-              BYD <span className="text-teal-500">Lenteng Agung</span>
+              BYD <span className="text-teal-500">Jakarta Pusat</span>
             </h2>
             <p className="text-gray-400 leading-relaxed mb-6 max-w-sm">
               Official authorized dealer providing the future of electric mobility. Experience the innovation, safety, and luxury of BYD vehicles.
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-teal-500 mt-1 flex-shrink-0" />
-                <span>Lenteng Agung, Jakarta Selatan</span>
+                <span>Jl. Kramat Raya No.158, Jakarta Pusat</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-5 h-5 text-teal-500 flex-shrink-0" />

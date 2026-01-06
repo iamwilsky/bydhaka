@@ -27,7 +27,7 @@ const MOCK_REVIEWS = [
     role: "Test Drive Participant",
     rating: 5,
     date: "1 bulan lalu",
-    content: "Desain interiornya sangat futuristik, terutama layar yang bisa diputar. Pelayanan sales BYD Lenteng Agung sangat informatif.",
+    content: "Desain interiornya sangat futuristik, terutama layar yang bisa diputar. Pelayanan sales BYD Jakarta sangat informatif.",
     likes: 8
   },
   {

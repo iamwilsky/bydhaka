@@ -29,9 +29,9 @@ export async function generateMetadata({
     }
 
     return {
-        title: `Jual ${model.name} ${variant.name} Lenteng Agung - Harga & Promo | ${dealerInfo.dealerName}`,
-        description: `Spesifikasi lengkap BYD ${model.name} varian ${variant.name}. Jarak tempuh ${variant.battery.range}, 0-100 km/h dalam ${variant.performance.acceleration}. Dapatkan promo OTR Lenteng Agung hari ini.`,
-        keywords: [model.name, variant.name, 'Harga ' + model.name, 'BYD Lenteng Agung'],
+        title: `Jual ${model.name} ${variant.name} Jakarta - Harga & Promo | ${dealerInfo.dealerName}`,
+        description: `Spesifikasi lengkap BYD ${model.name} varian ${variant.name}. Jarak tempuh ${variant.battery.range}, 0-100 km/h dalam ${variant.performance.acceleration}. Dapatkan promo OTR Jakarta hari ini.`,
+        keywords: [model.name, variant.name, 'Harga ' + model.name, 'BYD Jakarta'],
     }
 }
 
@@ -55,7 +55,7 @@ export default async function VariantDetailPage({
             {
                 '@type': 'Car',
                 name: `${model.name} ${variant.name}`,
-                image: `https://bydlentengagung.com${variant.imageUrl || model.heroImage}`,
+                image: `https://bydjakpus.com${variant.imageUrl || model.heroImage}`,
                 description: `BYD ${model.name} ${variant.name} (${variant.powertrain}). Baterai ${variant.battery.capacity} kWh, Jarak Tempuh ${variant.battery.range}. Akselerasi ${variant.performance.acceleration}.`,
                 sku: variant.id,
                 mpn: variant.id,
@@ -76,14 +76,14 @@ export default async function VariantDetailPage({
                 },
                 offers: {
                     '@type': 'Offer',
-                    url: `https://bydlentengagung.com/variant/${model.id}/${variant.id}`,
+                    url: `https://bydjakpus.com/variant/${model.id}/${variant.id}`,
                     priceCurrency: 'IDR',
                     price: variant.price,
                     itemCondition: 'https://schema.org/NewCondition',
                     availability: variant.soldOut ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
                     seller: {
                         '@type': 'AutoDealer',
-                        '@id': 'https://bydlentengagung.com/#dealer',
+                        '@id': 'https://bydjakpus.com/#dealer',
                         name: dealerInfo.dealerName,
                     },
                 },
@@ -95,19 +95,19 @@ export default async function VariantDetailPage({
                         '@type': 'ListItem',
                         position: 1,
                         name: 'Home',
-                        item: 'https://bydlentengagung.com',
+                        item: 'https://bydjakpus.com',
                     },
                     {
                         '@type': 'ListItem',
                         position: 2,
                         name: model.name,
-                        item: `https://bydlentengagung.com/model/${model.id}`,
+                        item: `https://bydjakpus.com/model/${model.id}`,
                     },
                     {
                         '@type': 'ListItem',
                         position: 3,
                         name: `${model.name} ${variant.name}`,
-                        item: `https://bydlentengagung.com/variant/${model.id}/${variant.id}`,
+                        item: `https://bydjakpus.com/variant/${model.id}/${variant.id}`,
                     },
                 ],
             },

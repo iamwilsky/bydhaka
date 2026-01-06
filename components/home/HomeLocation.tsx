@@ -19,10 +19,10 @@ export const HomeLocation: React.FC = () => {
               Lokasi Kami
             </span>
             <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-6">
-              Kunjungi Showroom BYD Lenteng Agung
+              Kunjungi Showroom {dealerInfo.dealerName}
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-              Lokasi strategis di Jalan Alternatif Lenteng Agung (Transyogi), mudah diakses dari Tol Jatikarya, Kota Wisata, Legenda Wisata, dan Citra Grand. Nikmati fasilitas Charging Station gratis saat Anda berkunjung.
+              Lokasi strategis di Jakarta Pusat, mudah diakses dari berbagai wilayah. Nikmati fasilitas 3S (Sales, Service, Spareparts) terbaik kami.
             </p>
 
             <div className="space-y-6">
@@ -32,7 +32,7 @@ export const HomeLocation: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-900 dark:text-white mb-1">Alamat Dealer</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Lenteng Agung, Jakarta Selatan</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Kramat Raya, Jakarta Pusat</p>
                 </div>
               </div>
 
@@ -67,8 +67,8 @@ export const HomeLocation: React.FC = () => {
           {/* Map Embed */}
           <div className="h-[400px] md:h-[500px] w-full bg-gray-200 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-slate-700 relative group">
             <iframe
-              title="Peta Lokasi BYD Lenteng Agung"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.341680696989!2d106.92051667586522!3d-6.350320962121336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d350616b39d%3A0x7d6c6e76865231c5!2sJl.%20Alternatif%20Lenteng Agung%20No.41%2C%20Jatikarya%2C%20Kec.%20Jatisampurna%2C%20Kota%20Bks%2C%20Jawa%20Barat%2017435!5e0!3m2!1sen!2sid!4v1709600000000!5m2!1sen!2sid"
+              title="Peta Lokasi BYD Jakarta"
+              src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sid!4v1767662251935!5m2!1sen!2sid!6m8!1m7!1s39yRBgj5aNklooDQtXv3hA!2m2!1d-6.189324695399919!2d106.8465762134959!3f246.80394841765028!4f2.7285732178843602!5f0.7820865974627469"
               width="100%"
               height="100%"
               style={{ border: 0 }}

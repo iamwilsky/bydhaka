@@ -31,11 +31,11 @@ export function PriceListContent({ models, currentMonth }: Props) {
     const seoFaqs = [
         {
             q: "Apakah harga OTR BYD di atas sudah termasuk pajak?",
-            a: "Ya, harga yang tercantum dalam pricelist BYD Lenteng Agung adalah harga On The Road (OTR) untuk wilayah Jakarta, Depok, Tangerang, dan Bekasi (Plat B). Harga sudah mencakup BBN-KB (Bea Balik Nama Kendaraan Bermotor) untuk mobil listrik, pembuatan STNK, dan BPKB."
+            a: "Ya, harga yang tercantum dalam pricelist BYD Jakarta adalah harga On The Road (OTR) untuk wilayah Jakarta, Depok, Tangerang, dan Bekasi (Plat B). Harga sudah mencakup BBN-KB (Bea Balik Nama Kendaraan Bermotor) untuk mobil listrik, pembuatan STNK, dan BPKB."
         },
         {
             q: "Apakah harga mengikat saat pemesanan (SPK)?",
-            a: "Harga tidak mengikat sampai dengan faktur diterbitkan. Namun, dengan melakukan SPK (Surat Pemesanan Kendaraan) di BYD Lenteng Agung, Anda akan mendapatkan prioritas alokasi unit dan penguncian promo yang berlaku pada bulan pemesanan."
+            a: "Harga tidak mengikat sampai dengan faktur diterbitkan. Namun, dengan melakukan SPK (Surat Pemesanan Kendaraan) di BYD Jakarta, Anda akan mendapatkan prioritas alokasi unit dan penguncian promo yang berlaku pada bulan pemesanan."
         },
         {
             q: "Berapa minimal DP untuk kredit mobil BYD?",
@@ -59,7 +59,7 @@ export function PriceListContent({ models, currentMonth }: Props) {
                     Daftar Harga Mobil BYD & Promo
                 </h1>
                 <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-                    Berikut adalah <strong>pricelist BYD terbaru</strong> (On The Road) untuk wilayah Jakarta, Lenteng Agung, Depok, Tangerang, dan Bekasi. Temukan mobil listrik impian Anda dengan penawaran terbaik bulan ini.
+                    Berikut adalah <strong>pricelist BYD terbaru</strong> (On The Road) untuk wilayah Jakarta, Depok, Tangerang, dan Bekasi. Temukan mobil listrik impian Anda dengan penawaran terbaik bulan ini.
                 </p>
             </div>
 
@@ -83,7 +83,7 @@ export function PriceListContent({ models, currentMonth }: Props) {
 
                                 <img
                                     src={model.heroImage}
-                                    alt={`Harga ${model.name} OTR Jakarta Lenteng Agung`}
+                                    alt={`Harga ${model.name} OTR Jakarta`}
                                     className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500 relative z-0"
                                 />
 
@@ -212,10 +212,10 @@ export function PriceListContent({ models, currentMonth }: Props) {
                 <div className="container mx-auto px-4 md:px-8 max-w-4xl">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div>
-                            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Informasi Penjualan BYD Lenteng Agung</h3>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Informasi Penjualan BYD Jakarta</h3>
                             <div className="prose prose-sm dark:prose-invert text-gray-600 dark:text-gray-400 leading-relaxed">
                                 <p className="mb-4">
-                                    <strong>BYD Lenteng Agung</strong> berkomitmen memberikan transparansi harga dan pelayanan terbaik bagi calon pemilik mobil listrik di Indonesia.
+                                    <strong>BYD Jakarta</strong> berkomitmen memberikan transparansi harga dan pelayanan terbaik bagi calon pemilik mobil listrik di Indonesia.
                                 </p>
                                 <p>
                                     Sebagai dealer resmi, kami melayani pembelian secara tunai (cash) maupun kredit dengan dukungan berbagai lembaga pembiayaan terpercaya. Dapatkan penawaran khusus seperti:

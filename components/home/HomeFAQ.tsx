@@ -11,27 +11,27 @@ export const HomeFAQ: React.FC = () => {
             Pertanyaan Umum (FAQ)
           </h2>
           <p className="text-gray-500 dark:text-gray-400">
-            Informasi seputar pembelian mobil listrik BYD di Lenteng Agung.
+            Informasi seputar pembelian mobil listrik BYD di Jakarta.
           </p>
         </div>
 
         <div className="space-y-4">
           {[
             {
-              q: "Di mana lokasi dealer BYD Lenteng Agung?",
-              a: "Dealer BYD Lenteng Agung berlokasi di Jl. Alternatif Lenteng Agung No.41, Jatikarya. Lokasi kami sangat strategis di jalan utama Transyogi, dekat dengan akses Tol Jatikarya dan kawasan Kota Wisata."
+              q: "Di mana lokasi dealer BYD Jakarta?",
+              a: "Dealer BYD Jakarta berlokasi di Jl. Kramat Raya No.158, Kenari, Kec. Senen, Kota Jakarta Pusat. Lokasi kami sangat strategis di pusat kota, mudah diakses dari berbagai wilayah Jakarta."
             },
             {
-              q: "Apakah tersedia unit Test Drive di BYD Lenteng Agung?",
+              q: "Apakah tersedia unit Test Drive di BYD Jakarta?",
               a: "Ya, kami menyediakan unit Test Drive lengkap untuk BYD Seal, Atto 3, dan Dolphin. Anda bisa melakukan booking jadwal melalui website ini atau menghubungi WhatsApp sales kami."
             },
             {
               q: "Bagaimana layanan purna jual (After Sales) BYD?",
-              a: "BYD Lenteng Agung adalah dealer 3S (Sales, Service, Sparepart). Kami memberikan garansi baterai hingga 8 tahun atau 160.000 km, serta layanan servis gratis dan suku cadang sesuai syarat dan ketentuan yang berlaku."
+              a: "BYD Jakarta adalah dealer 3S (Sales, Service, Sparepart). Kami memberikan garansi baterai hingga 8 tahun atau 160.000 km, serta layanan servis gratis dan suku cadang sesuai syarat dan ketentuan yang berlaku."
             },
             {
               q: "Apakah harga OTR mengikuti wilayah Jakarta atau Jawa Barat?",
-              a: "Untuk wilayah Lenteng Agung yang masuk area Bekasi/Jawa Barat dan Depok, harga OTR menyesuaikan regulasi pajak daerah setempat. Silakan hubungi Sales Consultant kami (Willy Arsal) untuk rincian harga OTR terbaru dan promo yang berlaku."
+              a: "Untuk wilayah DKI Jakarta, harga OTR menyesuaikan regulasi pajak daerah setempat. Silakan hubungi Sales Consultant kami (Gerry) untuk rincian harga OTR terbaru dan promo yang berlaku."
             }
           ].map((item, idx) => (
             <div key={idx} className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-100 dark:border-slate-700 shadow-sm">

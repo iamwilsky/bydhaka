@@ -27,11 +27,11 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     }
 
     return {
-        title: `Harga ${model.name} OTR Lenteng Agung - Spesifikasi & Promo Terbaru | ${dealerInfo.dealerName}`,
-        description: `Dapatkan penawaran terbaik ${model.name} di BYD Lenteng Agung. Jarak tempuh ${model.summaryRange}. Cicilan ringan, test drive tersedia. Hubungi ${dealerInfo.salesName}.`,
-        keywords: [model.name, 'Harga ' + model.name, model.name + ' OTR', 'BYD Lenteng Agung', `Promo ${model.name} Lenteng Agung`],
+        title: `Harga ${model.name} OTR Jakarta - Spesifikasi & Promo Terbaru | ${dealerInfo.dealerName}`,
+        description: `Dapatkan penawaran terbaik ${model.name} di BYD Jakarta. Jarak tempuh ${model.summaryRange}. Cicilan ringan, test drive tersedia. Hubungi ${dealerInfo.salesName}.`,
+        keywords: [model.name, 'Harga ' + model.name, model.name + ' OTR', 'BYD Jakarta', `Promo ${model.name} Jakarta`],
         alternates: {
-            canonical: `https://bydlentengagung.com/model/${model.id}`,
+            canonical: `https://bydjakpus.com/model/${model.id}`,
         },
         openGraph: {
             title: `${model.name} | ${dealerInfo.dealerName}`,
@@ -61,7 +61,7 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
             {
                 '@type': 'Car',
                 name: model.name,
-                image: `https://bydlentengagung.com${model.heroImage}`,
+                image: `https://bydjakpus.com${model.heroImage}`,
                 description: model.description,
                 sku: model.id,
                 mpn: model.id,
@@ -76,7 +76,7 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
                 },
                 offers: {
                     '@type': 'AggregateOffer',
-                    url: `https://bydlentengagung.com/model/${model.id}`,
+                    url: `https://bydjakpus.com/model/${model.id}`,
                     priceCurrency: 'IDR',
                     lowPrice: minPrice,
                     highPrice: maxPrice,
@@ -85,7 +85,7 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
                     availability: 'https://schema.org/InStock',
                     seller: {
                         '@type': 'AutoDealer',
-                        '@id': 'https://bydlentengagung.com/#dealer',
+                        '@id': 'https://bydjakpus.com/#dealer',
                         name: dealerInfo.dealerName,
                     },
                 },
@@ -97,19 +97,19 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
                         '@type': 'ListItem',
                         position: 1,
                         name: 'Home',
-                        item: 'https://bydlentengagung.com',
+                        item: 'https://bydjakpus.com',
                     },
                     {
                         '@type': 'ListItem',
                         position: 2,
                         name: 'Models',
-                        item: 'https://bydlentengagung.com/#models',
+                        item: 'https://bydjakpus.com/#models',
                     },
                     {
                         '@type': 'ListItem',
                         position: 3,
                         name: model.name,
-                        item: `https://bydlentengagung.com/model/${model.id}`,
+                        item: `https://bydjakpus.com/model/${model.id}`,
                     },
                 ],
             },
@@ -118,7 +118,7 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
                 mainEntity: [
                     {
                         '@type': 'Question',
-                        name: `Berapa harga OTR ${model.name} di Lenteng Agung?`,
+                        name: `Berapa harga OTR ${model.name} di Jakarta?`,
                         acceptedAnswer: {
                             '@type': 'Answer',
                             text: `Harga ${model.name} dimulai dari ${formatPrice(model.startingPrice)}. Harga ini berlaku untuk wilayah Jakarta (Plat B) dan sekitarnya. Hubungi kami untuk rincian diskon dan simulasi kredit.`,

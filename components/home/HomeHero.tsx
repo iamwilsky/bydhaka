@@ -104,7 +104,7 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
                 {/* Badge (Now Semantic H1) */}
                 <div className="flex items-center gap-3 mb-3 md:mb-6">
                   <h1 className="px-3 py-1 border border-teal-500/50 text-teal-600 dark:text-teal-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] rounded-full bg-teal-50 dark:bg-teal-950/30 backdrop-blur-sm">
-                    Dealer Resmi BYD Lenteng Agung
+                    Dealer Resmi BYD Jakarta
                   </h1>
                 </div>
 
@@ -123,7 +123,7 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
                 <div className="lg:hidden w-full h-[25vh] min-h-[200px] max-h-[280px] relative mb-4 flex items-center justify-center">
                   <img
                     src={model.heroImage}
-                    alt={`Promo ${model.name} BYD Lenteng Agung`}
+                    alt={`Promo ${model.name} BYD Jakarta`}
                     className="w-full h-full object-contain drop-shadow-xl"
                   />
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-teal-500/10 blur-[40px] rounded-full -z-10"></div>
@@ -188,7 +188,7 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
                 <div className="relative w-full h-[80vh] flex items-center justify-center">
                   <img
                     src={model.heroImage}
-                    alt={`Promo ${model.name} BYD Lenteng Agung`}
+                    alt={`Promo ${model.name} BYD Jakarta`}
                     className="w-full h-full object-contain object-center drop-shadow-2xl"
                   />
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-teal-500/5 dark:bg-teal-500/10 blur-[80px] rounded-full -z-10"></div>

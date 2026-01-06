@@ -17,21 +17,21 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://bydlentengagung.com'),
+    metadataBase: new URL('https://bydjakpus.com'),
     alternates: {
         canonical: '/',
     },
     title: {
-        default: 'BYD Lenteng Agung | Dealer Resmi Mobil Listrik BYD - Sealion 7, Seal, Atto 3, Dolphin',
-        template: '%s | BYD Lenteng Agung'
+        default: 'BYD Jakarta | Dealer Resmi Mobil Listrik BYD - Sealion 7, Seal, Atto 3, Dolphin',
+        template: '%s | BYD Jakarta'
     },
-    description: 'Kunjungi BYD Lenteng Agung, showroom dan dealer resmi BYD Indonesia. Dapatkan penawaran harga terbaik untuk mobil listrik BYD Sealion 7, Seal, Atto 3, dan Dolphin. Test drive sekarang.',
-    keywords: ['BYD Lenteng Agung', 'Showroom BYD Lenteng Agung', 'Dealer BYD Lenteng Agung', 'BYD Sealion 7', 'BYD Seal', 'BYD Atto 3', 'BYD Dolphin', 'Mobil Listrik Indonesia'],
+    description: 'Kunjungi BYD Jakarta, showroom dan dealer resmi BYD Indonesia. Dapatkan penawaran harga terbaik untuk mobil listrik BYD Sealion 7, Seal, Atto 3, dan Dolphin. Test drive sekarang.',
+    keywords: ['BYD Jakarta', 'Showroom BYD Jakarta', 'Dealer BYD Jakarta', 'BYD Sealion 7', 'BYD Seal', 'BYD Atto 3', 'BYD Dolphin', 'Mobil Listrik Indonesia'],
     openGraph: {
-        title: 'BYD Lenteng Agung | Dealer Resmi Mobil Listrik BYD',
-        description: 'Dealer Resmi BYD Lenteng Agung. Wujudkan impian mobil listrik Anda dengan teknologi BYD Blade Battery. Hubungi kami untuk promo terbaru.',
-        url: 'https://bydlentengagung.com',
-        siteName: 'BYD Lenteng Agung',
+        title: 'BYD Jakarta | Dealer Resmi Mobil Listrik BYD',
+        description: 'Dealer Resmi BYD Jakarta. Wujudkan impian mobil listrik Anda dengan teknologi BYD Blade Battery. Hubungi kami untuk promo terbaru.',
+        url: 'https://bydjakpus.com',
+        siteName: 'BYD Jakarta',
         images: [
             {
                 url: '/images/og-image.webp', // Ensure this exists or use a generic one
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         google: 'google-site-verification-code', // Add if available
     },
     other: {
-        'og:logo': 'https://bydlentengagung.com/web-app-manifest-512x512.png',
+        'og:logo': 'https://bydjakpus.com/web-app-manifest-512x512.png',
     }
 }
 
@@ -77,16 +77,16 @@ export default async function RootLayout({
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'AutoDealer',
-        '@id': 'https://bydlentengagung.com/#dealer',
+        '@id': 'https://bydjakpus.com/#dealer',
         name: dealerInfo.dealerName,
-        image: 'https://bydlentengagung.com/images/models/seal/hero/byd-seal-hero.webp',
+        image: 'https://bydjakpus.com/images/models/seal/hero/byd-seal-hero.webp',
         description: `Dealer Resmi ${dealerInfo.dealerName} menyediakan penjualan, servis, dan suku cadang mobil listrik BYD.`,
         address: {
             '@type': 'PostalAddress',
             streetAddress: dealerInfo.address,
-            addressLocality: 'Jakarta Selatan',
+            addressLocality: 'Jakarta Pusat',
             addressRegion: 'DKI Jakarta',
-            postalCode: '12610',
+            postalCode: '10320',
             addressCountry: 'ID'
         },
         geo: {
@@ -94,7 +94,7 @@ export default async function RootLayout({
             latitude: -6.3768, // Update these if necessary, leaving as is for now or requesting user input if specific coords are known. Better to leave generic or update if user provided. User didn't provide coords. I will stick to updating the URL.
             longitude: 106.9158
         },
-        url: 'https://bydlentengagung.com',
+        url: 'https://bydjakpus.com',
         telephone: `+${dealerInfo.salesPhone}`,
         openingHoursSpecification: [
             {
