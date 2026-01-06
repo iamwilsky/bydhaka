@@ -3,23 +3,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { Menu, X, Sun, Moon, User, LogOut, LayoutDashboard } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useModal } from '@/contexts/ModalContext';
-import { useAuth } from '@/contexts/AuthContext';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
-  // Dropdown State
-  const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  // Dropdown Ref not needed anymore, but handle click outside is usually good to keep if used elsewhere, 
+  // but here it was only for profile. We can remove it or keep minimal.
+  // Actually simplest is to remove it all.
 
   const pathname = usePathname();
   const router = useRouter();
-  const { openModal, openLoginModal } = useModal();
-  const { session, signOut } = useAuth();
+  const { openModal } = useModal();
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -50,17 +48,8 @@ export const Navbar: React.FC = () => {
       document.documentElement.classList.remove('dark');
     }
 
-    // Close dropdown when clicking outside
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setProfileDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
@@ -78,23 +67,7 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     setMobileMenuOpen(false);
-    setProfileDropdownOpen(false);
   }, [pathname]);
-
-  const handleProfileClick = () => {
-    if (session) {
-      setProfileDropdownOpen(!profileDropdownOpen);
-    } else {
-      openLoginModal();
-    }
-  };
-
-  const handleLogout = async () => {
-    await signOut();
-    setProfileDropdownOpen(false);
-    setMobileMenuOpen(false);
-    router.push('/');
-  };
 
   // Color Logic
   const textColorClass = 'text-slate-900 dark:text-white';
@@ -145,61 +118,6 @@ export const Navbar: React.FC = () => {
                 {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
 
-              {/* User Profile Icon / Dropdown */}
-              <div className="relative" ref={dropdownRef}>
-                <button
-                  onClick={handleProfileClick}
-                  className={`p-2 rounded-full transition-colors flex items-center gap-2 ${showSolidNav
-                    ? 'hover:bg-gray-100 dark:hover:bg-slate-800 text-slate-900 dark:text-white'
-                    : `${textColorClass} hover:bg-black/5 dark:hover:bg-white/10`
-                    } ${session ? 'pl-3 pr-2 bg-gray-100/50 dark:bg-slate-800/50' : ''}`}
-                  aria-label="User Account"
-                >
-                  {session ? (
-                    <>
-                      <span className="text-xs font-bold hidden lg:block max-w-[100px] truncate">
-                        {session.user.email?.split('@')[0]}
-                      </span>
-                      <div className="w-5 h-5 rounded-full bg-teal-500 flex items-center justify-center text-[10px] text-white font-bold">
-                        {session.user.email?.charAt(0).toUpperCase()}
-                      </div>
-                    </>
-                  ) : (
-                    <User className="w-5 h-5" />
-                  )}
-                </button>
-
-                {/* Dropdown Menu */}
-                {profileDropdownOpen && session && (
-                  <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-gray-100 dark:border-slate-700 py-2 overflow-hidden animate-fade-in origin-top-right">
-                    <div className="px-4 py-3 border-b border-gray-100 dark:border-slate-700">
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Signed in as</p>
-                      <p className="text-sm font-bold text-slate-900 dark:text-white truncate">{session.user.email}</p>
-                    </div>
-
-                    <div className="py-1">
-                      <Link
-                        href="/admin"
-                        className="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-slate-700"
-                      >
-                        <LayoutDashboard className="w-4 h-4" />
-                        Admin Dashboard
-                      </Link>
-                    </div>
-
-                    <div className="py-1 border-t border-gray-100 dark:border-slate-700">
-                      <button
-                        onClick={handleLogout}
-                        className="flex w-full items-center gap-3 px-4 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 text-left"
-                      >
-                        <LogOut className="w-4 h-4" />
-                        Sign out
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-
               {/* Contact Button */}
               <button
                 onClick={() => openModal()}
@@ -247,52 +165,6 @@ export const Navbar: React.FC = () => {
               {link.name}
             </Link>
           ))}
-
-          {/* Mobile Auth Section */}
-          <div className="pt-4 border-t border-gray-100 dark:border-slate-800">
-            {session ? (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-bold">
-                    {session.user.email?.charAt(0).toUpperCase()}
-                  </div>
-                  <div className="overflow-hidden">
-                    <p className="text-sm font-bold text-slate-900 dark:text-white truncate">{session.user.email}</p>
-                    <p className="text-xs text-teal-500">Administrator</p>
-                  </div>
-                </div>
-
-                <Link
-                  href="/admin"
-                  className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
-                >
-                  <LayoutDashboard className="w-5 h-5" />
-                  Admin Dashboard
-                </Link>
-
-                <button
-                  onClick={handleLogout}
-                  className="flex w-full items-center gap-3 p-3 rounded-lg bg-red-50 dark:bg-red-900/10 text-red-600 font-bold"
-                >
-                  <LogOut className="w-5 h-5" />
-                  Sign Out
-                </button>
-              </div>
-            ) : (
-              <div
-                className="flex items-center gap-4 py-4 cursor-pointer"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  openLoginModal();
-                }}
-              >
-                <div className="w-10 h-10 rounded-full bg-gray-100 dark:bg-slate-800 flex items-center justify-center">
-                  <User className="w-5 h-5 text-slate-900 dark:text-white" />
-                </div>
-                <span className="font-bold text-slate-900 dark:text-white">Admin Login</span>
-              </div>
-            )}
-          </div>
 
           <button
             onClick={() => openModal()}

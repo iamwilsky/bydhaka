@@ -8,10 +8,7 @@ interface ModalContextType {
   closeModal: () => void;
   selectedModel: string;
 
-  // Login Modal State
-  isLoginOpen: boolean;
-  openLoginModal: () => void;
-  closeLoginModal: () => void;
+
 
   // Review Modal State
   isReviewOpen: boolean;
@@ -26,8 +23,7 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [isOpen, setIsOpen] = useState(false);
   const [selectedModel, setSelectedModel] = useState('');
 
-  // Login Modal State
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
 
   // Review Modal State
   const [isReviewOpen, setIsReviewOpen] = useState(false);
@@ -42,9 +38,6 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setTimeout(() => setSelectedModel(''), 300); // Clear after animation
   };
 
-  const openLoginModal = () => setIsLoginOpen(true);
-  const closeLoginModal = () => setIsLoginOpen(false);
-
   const openReviewModal = (modelName?: string) => {
     if (modelName) setSelectedModel(modelName);
     setIsReviewOpen(true);
@@ -58,7 +51,6 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   return (
     <ModalContext.Provider value={{
       isOpen, openModal, closeModal, selectedModel,
-      isLoginOpen, openLoginModal, closeLoginModal,
       isReviewOpen, openReviewModal, closeReviewModal
     }}>
       {children}
