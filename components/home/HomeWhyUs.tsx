@@ -26,7 +26,7 @@ export const HomeWhyUs: React.FC = () => {
             </p>
 
             <Button onClick={() => openModal()} variant="primary" className="dark:bg-teal-600 dark:hover:bg-teal-700 dark:text-white dark:border-none">
-              Hubungi Sales (Gerry)
+              Hubungi Sales ({dealerInfo.salesName.split(' ')[0]})
             </Button>
           </div>
 

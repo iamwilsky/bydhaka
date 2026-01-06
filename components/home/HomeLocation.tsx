@@ -19,7 +19,7 @@ export const HomeLocation: React.FC = () => {
               Lokasi Kami
             </span>
             <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-6">
-              Kunjungi Showroom BYD Jakarta
+              Kunjungi Showroom {dealerInfo.dealerName}
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
               Lokasi strategis di Jakarta Pusat, mudah diakses dari berbagai wilayah. Nikmati fasilitas 3S (Sales, Service, Spareparts) terbaik kami.
@@ -32,7 +32,7 @@ export const HomeLocation: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-900 dark:text-white mb-1">Alamat Dealer</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Jl. Kramat Raya No.158, Kenari, Kec. Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10320</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{dealerInfo.address}</p>
                 </div>
               </div>
 
@@ -52,7 +52,7 @@ export const HomeLocation: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-900 dark:text-white mb-1">Hubungi Kami</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Sales: 0813-1399-9982 (Gerry)</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Sales: {dealerInfo.displayPhone} ({dealerInfo.salesName})</p>
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@ export const HomeLocation: React.FC = () => {
               className="grayscale group-hover:grayscale-0 transition-all duration-500"
             ></iframe>
             <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-slate-900/90 text-slate-900 dark:text-white backdrop-blur px-4 py-2 rounded-lg text-xs font-bold shadow-sm pointer-events-none border border-white/20 dark:border-slate-700">
-              📍 BYD Jakarta
+              📍 {dealerInfo.dealerName}
             </div>
           </div>
         </div>

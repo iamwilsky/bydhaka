@@ -48,11 +48,11 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-teal-500 mt-1 flex-shrink-0" />
-                <span>Jl. Kramat Raya No.158, Kenari, Kec. Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10320</span>
+                <span>{dealerInfo.address}</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-5 h-5 text-teal-500 flex-shrink-0" />
-                <span>0813-1399-9982 (Gerry)</span>
+                <span>{dealerInfo.displayPhone} ({dealerInfo.salesName})</span>
               </li>
 
             </ul>
@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
           <div className="flex flex-col items-center md:items-start gap-1">
-            <p>&copy; {new Date().getFullYear()} BYD Jakarta. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {dealerInfo.dealerName}. All rights reserved.</p>
             <p className="text-xs text-gray-600">
               Developed by <a href="https://webchain.id/" target="_blank" rel="noopener noreferrer" className="hover:text-teal-500 transition-colors">Webchain Indonesia</a>
             </p>

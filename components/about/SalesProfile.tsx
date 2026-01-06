@@ -41,7 +41,7 @@ export const SalesProfile: React.FC = () => {
                 Official Sales Consultant
               </span>
               <h2 className="text-4xl lg:text-5xl font-display font-bold text-slate-900 dark:text-white mb-2">
-                Gerry
+                {dealerInfo.salesName}
               </h2>
             </div>
 
@@ -65,13 +65,13 @@ export const SalesProfile: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                onClick={() => window.location.href = `tel:+628131399982`}
+                onClick={() => window.location.href = `tel:+${dealerInfo.salesPhone}`}
                 className="flex items-center justify-center gap-2 shadow-lg shadow-slate-900/10"
               >
                 <Phone className="w-4 h-4" /> Hubungi Saya
               </Button>
               <a
-                href={`https://wa.me/628131399982`}
+                href={`https://wa.me/${dealerInfo.salesPhone}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white font-medium uppercase tracking-wide text-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors rounded hover:border-slate-900 dark:hover:border-white"

@@ -70,7 +70,7 @@ export const LeadModal: React.FC = () => {
     });
 
     // 2. Construct WhatsApp Message using DYNAMIC dealerInfo
-    const text = `Halo Gerry,
+    const text = `Halo ${dealerInfo.salesName},
     
 Perkenalkan nama saya *${formData.name}*.
 Saya melihat website ${dealerInfo.domain} dan tertarik mendapatkan penawaran & informasi detail untuk:
@@ -84,7 +84,7 @@ Mohon informasinya. Terima kasih.`;
 
     const encodedText = encodeURIComponent(text);
     // Use the dynamic phone number from Settings
-    const waUrl = `https://wa.me/628131399982?text=${encodedText}`;
+    const waUrl = `https://wa.me/${dealerInfo.salesPhone}?text=${encodedText}`;
 
     // Simulate loading briefly then redirect
     setSubmitted(true);
@@ -150,7 +150,7 @@ Mohon informasinya. Terima kasih.`;
                         <MessageCircle className="w-8 h-8 text-green-600" />
                       </div>
                       <p className="text-center text-gray-600 dark:text-gray-300">
-                        Membuka WhatsApp untuk menghubungi <strong>Gerry</strong>...
+                        Membuka WhatsApp untuk menghubungi <strong>{dealerInfo.salesName}</strong>...
                       </p>
                     </div>
                   ) : (
@@ -239,7 +239,7 @@ Mohon informasinya. Terima kasih.`;
                           Hubungi via WhatsApp
                         </Button>
                         <p className="text-[10px] text-gray-400 text-center mt-3">
-                          Anda akan terhubung langsung dengan Gerry (Sales Consultant).
+                          Anda akan terhubung langsung dengan {dealerInfo.salesName} (Sales Consultant).
                         </p>
                       </div>
                     </form>
