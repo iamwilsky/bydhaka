@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     keywords: ['Harga BYD', 'Pricelist BYD', 'Harga BYD Seal', 'Harga BYD Atto 3', 'Harga BYD Dolphin', 'BYD Jakarta'],
     openGraph: {
         images: ['/images/og-image-pricelist.webp'],
+        type: 'website',
     },
 }
 
