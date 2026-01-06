@@ -35,9 +35,26 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   // Placeholder for addLead - currently just logging, will be Google Sheets later
   const addLead = async (leadData: Omit<Lead, 'id' | 'date' | 'status'>) => {
-    // TODO: Implement Google Sheets integration here
-    console.log("New Lead Submitted (Local only, DB removed):", leadData);
-    // Previously we saved to Supabase here. Now we just proceed to WhatsApp redirection in the UI.
+    try {
+      // Google Apps Script Web App URL
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzvZjrvzWqhncDbMdGSA1Ypw7aS0Kn5cDsGk8VWhF_qUeEu3XGn5Oe_NjOtTFSKAEE/exec";
+
+      // Send data to Google Sheets using 'no-cors' mode
+      // Note: 'no-cors' means we won't get a readable response JSON, but the request will succeed.
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8', // GAS requires text/plain for CORS workaround
+        },
+        body: JSON.stringify(leadData),
+        mode: 'no-cors'
+      });
+
+      console.log("Lead sent to Google Sheets:", leadData);
+    } catch (error) {
+      console.error("Failed to send lead to Google Sheets:", error);
+      // We don't block the UI flow even if this fails, WhatsApp redirect still happens
+    }
   };
 
   const updateDealerInfo = async (info: DealerInfo) => {
