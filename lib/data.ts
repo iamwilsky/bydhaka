@@ -8,58 +8,9 @@ import { dealerData as defaultDealerData } from '@/data/dealer'
  * Used for SSG/ISR at build time and revalidation
  */
 export async function getModelsWithPricing(): Promise<CarModel[]> {
-    try {
-        const { data: pricingData, error } = await supabaseServer
-            .from('variants')
-            .select('*')
-
-        if (error) {
-            console.error('Error fetching variants pricing:', error)
-            return BYD_MODELS // Fallback to static data
-        }
-
-        if (!pricingData || pricingData.length === 0) {
-            return BYD_MODELS // No pricing overrides, use static
-        }
-
-        // Merge pricing data with static models
-        return BYD_MODELS.map(model => {
-            const updatedVariants = model.variants.map(variant => {
-                const dbRecord = pricingData.find(
-                    (r: any) => r.model_id === model.id && r.variant_id === variant.id
-                )
-
-                if (dbRecord) {
-                    return {
-                        ...variant,
-                        price: Number(dbRecord.price),
-                        originalPrice: dbRecord.original_price ? Number(dbRecord.original_price) : undefined,
-                        soldOut: dbRecord.is_sold_out ?? false
-                    }
-                }
-                return variant
-            })
-
-            // Recalculate model starting price based on cheapest available variant
-            const activeVariants = updatedVariants.filter(v => !v.soldOut && v.price > 0)
-            const eligibleVariants = activeVariants.length > 0 ? activeVariants : updatedVariants
-
-            if (eligibleVariants.length > 0) {
-                const cheapestVariant = [...eligibleVariants].sort((a, b) => a.price - b.price)[0]
-                return {
-                    ...model,
-                    variants: updatedVariants,
-                    startingPrice: cheapestVariant.price,
-                    originalPrice: cheapestVariant.originalPrice
-                }
-            }
-
-            return { ...model, variants: updatedVariants }
-        })
-    } catch (err) {
-        console.error('Unexpected error in getModelsWithPricing:', err)
-        return BYD_MODELS
-    }
+    // 100% SSG: Return static data directly, bypassing Supabase.
+    // This matches the user's request to use "data ts model kendaraannya saja".
+    return BYD_MODELS;
 }
 
 /**
@@ -88,32 +39,8 @@ export async function getVariant(modelId: string, variantId: string): Promise<{ 
  * Used for SSG/ISR at build time
  */
 export async function getDealerInfo(): Promise<DealerInfo> {
-    try {
-        const { data, error } = await supabaseServer
-            .from('dealer_info')
-            .select('*')
-            .eq('id', 1)
-            .single()
-
-        if (error || !data) {
-            console.error('Error fetching dealer info:', error)
-            return defaultDealerData
-        }
-
-        return {
-            salesName: data.sales_name,
-            salesPhone: data.sales_phone,
-            displayPhone: data.display_phone,
-            dealerName: data.dealer_name,
-            address: data.address,
-            domain: data.domain,
-            email: data.email,
-            mapsUrl: data.maps_url
-        }
-    } catch (err) {
-        console.error('Unexpected error in getDealerInfo:', err)
-        return defaultDealerData
-    }
+    // 100% SSG: Return static dealer data directly.
+    return defaultDealerData;
 }
 
 /**
