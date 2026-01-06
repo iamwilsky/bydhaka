@@ -1,4 +1,4 @@
-import { getModelsWithPricing, getDealerInfo } from '@/lib/data'
+import { BYD_MODELS } from '@/constants'
 import { Layout } from '@/components/layout/Layout'
 import { HomeHero } from '@/components/home/HomeHero'
 import { HomeModelShowcase } from '@/components/home/HomeModelShowcase'
@@ -8,12 +8,9 @@ import { HomeFAQ } from '@/components/home/HomeFAQ'
 import { HomeWhyUs } from '@/components/home/HomeWhyUs'
 import { VisitorTracker } from '@/components/utils/VisitorTracker'
 
-// ISR: Revalidate every 5 minutes
-export const revalidate = 300
-
-export default async function HomePage() {
-    // Fetch data at build time / revalidation
-    const models = await getModelsWithPricing()
+export default function HomePage() {
+    // Use static data directly for 100% SSG
+    const models = BYD_MODELS
 
     return (
         <Layout>

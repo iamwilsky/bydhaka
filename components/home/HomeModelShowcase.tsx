@@ -3,8 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Users, Zap, Gauge } from 'lucide-react';
-import { formatPrice } from '@/constants';
-import { useData } from '@/contexts/DataContext';
+import { formatPrice, BYD_MODELS } from '@/constants';
 import { useModal } from '@/contexts/ModalContext';
 import { CarModel } from '@/types';
 
@@ -13,11 +12,10 @@ interface Props {
 }
 
 export const HomeModelShowcase: React.FC<Props> = ({ initialModels }) => {
-  const { models: contextModels, isPricingLoading } = useData();
   const { openModal } = useModal();
 
-  // Use initialModels from server if available, otherwise fall back to context
-  const models = initialModels || contextModels;
+  // Use initialModels from server if available, otherwise fall back to static constant
+  const models = initialModels || BYD_MODELS;
 
   return (
     <section id="model-showcase" className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300">
@@ -53,7 +51,7 @@ export const HomeModelShowcase: React.FC<Props> = ({ initialModels }) => {
                   </div>
 
                   {/* Discount Badge */}
-                  {!isPricingLoading && model.originalPrice && (
+                  {model.originalPrice && (
                     <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 text-xs font-bold uppercase tracking-widest rounded shadow-sm z-10 animate-pulse">
                       Promo
                     </div>
@@ -68,23 +66,16 @@ export const HomeModelShowcase: React.FC<Props> = ({ initialModels }) => {
                     <div className="text-right">
                       <span className="block text-[10px] text-gray-400 uppercase">Mulai Dari</span>
 
-                      {isPricingLoading ? (
-                        <div className="flex flex-col items-end gap-1 mt-1">
-                          <div className="h-3 w-16 bg-gray-200 dark:bg-slate-700 rounded animate-pulse"></div>
-                          <div className="h-5 w-24 bg-gray-200 dark:bg-slate-700 rounded animate-pulse"></div>
-                        </div>
-                      ) : (
-                        <>
-                          {model.originalPrice && (
-                            <span className="block text-xs text-gray-400 line-through decoration-red-500">
-                              {formatPrice(model.originalPrice).replace(',00', '').replace('Rp', '')}
-                            </span>
-                          )}
-                          <span className="text-sm font-bold text-slate-900 dark:text-white">
-                            {formatPrice(model.startingPrice).replace(',00', '').replace('Rp', '')}*
+                      <>
+                        {model.originalPrice && (
+                          <span className="block text-xs text-gray-400 line-through decoration-red-500">
+                            {formatPrice(model.originalPrice).replace(',00', '').replace('Rp', '')}
                           </span>
-                        </>
-                      )}
+                        )}
+                        <span className="text-sm font-bold text-slate-900 dark:text-white">
+                          {formatPrice(model.startingPrice).replace(',00', '').replace('Rp', '')}*
+                        </span>
+                      </>
                     </div>
                   </div>
                   <p className="text-sm font-medium text-gray-400 uppercase tracking-widest mb-4">

@@ -6,8 +6,8 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { formatPrice } from '@/constants';
 import { useModal } from '@/contexts/ModalContext';
-import { useData } from '@/contexts/DataContext';
 import { CarModel } from '@/types';
+import { BYD_MODELS } from '@/constants';
 
 interface Props {
   initialModels?: CarModel[];
@@ -15,12 +15,11 @@ interface Props {
 
 export const HomeHero: React.FC<Props> = ({ initialModels }) => {
   const { openModal } = useModal();
-  const { models: contextModels, isPricingLoading } = useData();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Use initialModels from server if available
-  const models = initialModels || contextModels;
+  // Use initialModels from server if available, strictly fallback to static constant
+  const models = initialModels || BYD_MODELS;
 
   // Auto-play slider
   useEffect(() => {
@@ -136,25 +135,18 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
                     <div className="text-[10px] uppercase tracking-widest text-teal-600 dark:text-teal-500 font-bold">Max Range</div>
                   </div>
 
-                  {/* Price with loading state */}
+                  {/* Price - Static Data */}
                   <div>
-                    {isPricingLoading ? (
-                      <div className="flex flex-col gap-1">
-                        <div className="h-4 w-24 bg-gray-200 dark:bg-slate-800 rounded animate-pulse mb-1"></div>
-                        <div className="h-8 w-32 bg-gray-200 dark:bg-slate-800 rounded animate-pulse"></div>
-                      </div>
-                    ) : (
-                      <div className="flex flex-col">
-                        {model.originalPrice && model.originalPrice > model.startingPrice && (
-                          <div className="text-xs text-gray-400 line-through decoration-red-500">
-                            {formatPrice(model.originalPrice)}
-                          </div>
-                        )}
-                        <div className="text-xl md:text-3xl font-display font-bold text-slate-900 dark:text-white mb-1">
-                          {formatPrice(model.startingPrice).replace('Rp', '').replace(',00', '')}
+                    <div className="flex flex-col">
+                      {model.originalPrice && model.originalPrice > model.startingPrice && (
+                        <div className="text-xs text-gray-400 line-through decoration-red-500">
+                          {formatPrice(model.originalPrice)}
                         </div>
+                      )}
+                      <div className="text-xl md:text-3xl font-display font-bold text-slate-900 dark:text-white mb-1">
+                        {formatPrice(model.startingPrice).replace('Rp', '').replace(',00', '')}
                       </div>
-                    )}
+                    </div>
                     <div className="text-[10px] uppercase tracking-widest text-teal-600 dark:text-teal-500 font-bold">Mulai Dari (OTR)</div>
                   </div>
                 </div>
