@@ -148,6 +148,7 @@ export default async function RootLayout({
                     gtag('js', new Date());
 
                     gtag('config', 'G-Z20JS2NHVY');
+                    gtag('config', 'AW-17886729721');
                     `}
                 </Script>
                 <Providers>
