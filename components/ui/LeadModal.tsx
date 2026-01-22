@@ -70,6 +70,16 @@ export const LeadModal: React.FC = () => {
       salesName: dealerInfo.salesName
     });
 
+    // 1b. Push GTM Event
+    if (typeof window !== 'undefined' && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: 'leads_generated',
+        event_label: `${formData.model} - ${formData.variant}`,
+        value: 0,
+        currency: 'IDR'
+      });
+    }
+
     // 2. Construct WhatsApp Message using DYNAMIC dealerInfo
     const text = `Halo ${dealerInfo.salesName},
     
