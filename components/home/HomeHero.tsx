@@ -111,30 +111,30 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
                 </div>
 
                 {/* Model Name (Semantic H2) */}
-                <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-display font-semibold tracking-tight leading-none mb-4 text-slate-900 dark:text-white">
+                <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-display font-semibold tracking-tight leading-none mb-3 md:mb-4 text-slate-900 dark:text-white">
                   {model.name.replace('BYD ', '')}
                 </h2>
 
                 {/* Description */}
-                <p className="text-sm md:text-lg text-gray-600 dark:text-gray-400 font-normal mb-8 max-w-lg leading-relaxed line-clamp-2 md:line-clamp-none">
+                <p className="text-xs sm:text-sm md:text-lg text-gray-600 dark:text-gray-400 font-normal mb-6 md:mb-8 max-w-lg leading-relaxed line-clamp-3 md:line-clamp-none">
                   {model.tagline}. {model.description}
                 </p>
 
                 {/* MOBILE ONLY: Image */}
-                <div className="lg:hidden w-full h-[25vh] min-h-[200px] max-h-[280px] relative mb-4 flex items-center justify-center">
+                <div className="lg:hidden w-full h-[30vh] min-h-[180px] max-h-[250px] relative mb-4 flex items-center justify-center -mx-4">
                   <img
                     src={model.heroImage}
                     alt={`Promo ${model.name} BYD Jakarta`}
-                    className="w-full h-full object-contain drop-shadow-xl"
+                    className="w-[110%] h-full object-contain drop-shadow-xl translate-x-4"
                   />
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-teal-500/10 blur-[40px] rounded-full -z-10"></div>
                 </div>
 
                 {/* Stats Grid */}
-                <div className="flex gap-8 mb-8 md:mb-12 border-t border-gray-200 dark:border-white/10 pt-6">
+                <div className="flex gap-4 md:gap-8 mb-6 md:mb-12 border-t border-gray-200 dark:border-white/10 pt-4 md:pt-6">
                   <div>
-                    <div className="text-2xl md:text-4xl font-display font-semibold text-slate-900 dark:text-white mb-1">{model.summaryRange}</div>
-                    <div className="text-[10px] uppercase tracking-[0.1em] text-gray-500 font-medium">Max Range</div>
+                    <div className="text-xl sm:text-2xl md:text-4xl font-display font-semibold text-slate-900 dark:text-white mb-1">{model.summaryRange}</div>
+                    <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.1em] text-gray-500 font-medium">Max Range</div>
                   </div>
 
                   {/* Price - Static Data */}
@@ -145,11 +145,11 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
                           {formatPrice(model.originalPrice)}
                         </div>
                       )}
-                      <div className="text-2xl md:text-4xl font-display font-semibold text-slate-900 dark:text-white mb-1">
+                      <div className="text-xl sm:text-2xl md:text-4xl font-display font-semibold text-slate-900 dark:text-white mb-1">
                         {formatPrice(model.startingPrice).replace('Rp', '').replace(',00', '')}
                       </div>
                     </div>
-                    <div className="text-[10px] uppercase tracking-[0.1em] text-gray-500 font-medium">Mulai Dari (OTR)</div>
+                    <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.1em] text-gray-500 font-medium">Mulai Dari (OTR)</div>
                   </div>
                 </div>
 
@@ -192,15 +192,15 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
         </div>
       ))}
 
-      {/* Pagination Dots (Hidden on mobile) */}
-      <div className="hidden md:flex absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 z-40 space-x-3">
+      {/* Pagination Dots */}
+      <div className="absolute bottom-6 md:bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 z-40 space-x-2 md:space-x-3 flex">
         {models.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-1 transition-all duration-300 rounded-full ${index === currentSlide
-              ? 'w-8 bg-teal-600 dark:bg-teal-500'
-              : 'w-2 bg-slate-300 dark:bg-white/30 hover:bg-slate-400 dark:hover:bg-white'
+            className={`h-1 md:h-1.5 transition-all duration-300 rounded-full ${index === currentSlide
+              ? 'w-6 md:w-8 bg-teal-600 dark:bg-teal-500'
+              : 'w-1.5 md:w-2 bg-slate-200 dark:bg-white/30 hover:bg-slate-400 dark:hover:bg-white'
               }`}
             aria-label={`Go to slide ${index + 1}`}
           />
