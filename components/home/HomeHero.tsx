@@ -101,20 +101,19 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
               <div className={`w-full lg:w-1/2 pt-16 md:pt-24 lg:pt-0 z-30 flex flex-col justify-center transition-all duration-1000 delay-300 transform ${index === currentSlide ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
 
                 {/* Badge (Now Semantic H1) */}
-                <div className="flex items-center gap-3 mb-3 md:mb-6">
-                  <h1 className="px-3 py-1 border border-teal-500/50 text-teal-600 dark:text-teal-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] rounded-full bg-teal-50 dark:bg-teal-950/30 backdrop-blur-sm">
+                <div className="flex items-center mb-2 md:mb-4">
+                  <h1 className="text-gray-500 dark:text-gray-400 text-[10px] md:text-xs font-semibold uppercase tracking-[0.3em]">
                     Dealer Resmi BYD Jakarta
                   </h1>
                 </div>
 
                 {/* Model Name (Now Semantic H2) */}
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter leading-[0.9] mb-3 md:mb-6 text-slate-900 dark:text-white">
+                <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-display font-semibold tracking-tight leading-none mb-4 text-slate-900 dark:text-white">
                   {model.name.replace('BYD ', '')}
-                  <span className="text-teal-500">.</span>
                 </h2>
 
                 {/* Description */}
-                <p className="text-sm md:text-xl text-gray-600 dark:text-gray-300 font-light mb-4 md:mb-8 max-w-lg leading-relaxed line-clamp-2 md:line-clamp-none">
+                <p className="text-sm md:text-lg text-gray-600 dark:text-gray-400 font-normal mb-8 max-w-lg leading-relaxed line-clamp-2 md:line-clamp-none">
                   {model.tagline}. {model.description}
                 </p>
 
@@ -129,25 +128,25 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-2 gap-8 mb-6 md:mb-10 border-t border-gray-200 dark:border-white/10 pt-4 md:pt-6 max-w-sm">
+                <div className="flex gap-8 mb-8 md:mb-12 border-t border-gray-200 dark:border-white/10 pt-6">
                   <div>
-                    <div className="text-xl md:text-3xl font-display font-bold text-slate-900 dark:text-white mb-1">{model.summaryRange}</div>
-                    <div className="text-[10px] uppercase tracking-widest text-teal-600 dark:text-teal-500 font-bold">Max Range</div>
+                    <div className="text-2xl md:text-4xl font-display font-semibold text-slate-900 dark:text-white mb-1">{model.summaryRange}</div>
+                    <div className="text-[10px] uppercase tracking-[0.1em] text-gray-500 font-medium">Max Range</div>
                   </div>
 
                   {/* Price - Static Data */}
                   <div>
                     <div className="flex flex-col">
                       {model.originalPrice && model.originalPrice > model.startingPrice && (
-                        <div className="text-xs text-gray-400 line-through decoration-red-500">
+                        <div className="text-xs text-gray-400 line-through decoration-red-500 mb-1">
                           {formatPrice(model.originalPrice)}
                         </div>
                       )}
-                      <div className="text-xl md:text-3xl font-display font-bold text-slate-900 dark:text-white mb-1">
+                      <div className="text-2xl md:text-4xl font-display font-semibold text-slate-900 dark:text-white mb-1">
                         {formatPrice(model.startingPrice).replace('Rp', '').replace(',00', '')}
                       </div>
                     </div>
-                    <div className="text-[10px] uppercase tracking-widest text-teal-600 dark:text-teal-500 font-bold">Mulai Dari (OTR)</div>
+                    <div className="text-[10px] uppercase tracking-[0.1em] text-gray-500 font-medium">Mulai Dari (OTR)</div>
                   </div>
                 </div>
 
@@ -156,20 +155,18 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
                   <Button
                     size="lg"
                     onClick={() => openModal(`Penawaran Spesial - ${model.name}`)}
-                    variant="primary"
-                    className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-gray-200 border-none px-8"
+                    className="bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-gray-100 rounded-sm px-10 py-6 text-xs uppercase tracking-wider font-semibold border-none transition-colors"
                   >
                     Dapatkan Penawaran
-                    <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
 
                   <Link href={`/model/${model.id}`}>
                     <Button
                       size="lg"
                       variant="outline"
-                      className="text-slate-900 border-slate-300 hover:bg-slate-50 dark:text-white dark:border-white/30 dark:hover:bg-white/10 dark:hover:border-white w-full sm:w-auto"
+                      className="text-slate-900 border-slate-900 hover:bg-slate-50 dark:text-white dark:border-white dark:hover:bg-white/5 rounded-sm px-10 py-6 text-xs uppercase tracking-wider font-semibold transition-colors w-full sm:w-auto"
                     >
-                      Lihat Detail Unit
+                      Pelajari Lebih Lanjut
                     </Button>
                   </Link>
                 </div>
