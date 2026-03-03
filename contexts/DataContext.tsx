@@ -37,7 +37,7 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const addLead = async (leadData: Omit<Lead, 'id' | 'date' | 'status'>) => {
     try {
       // Google Apps Script Web App URL
-      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwsCjZNKfeHFQyLETwj5MiqMIq31D6OqImEYH0H8_xFFXHCVXB-mr5mGia3Zk2vwSb_/exec";
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwnulvUcQ0tBSm1Qp3VD3RCqYCQRe8W9V2SqfoWwv7_7pN2bkPNHFKRmUX5KgtvK_bT/exec";
 
       // Send data to Google Sheets using 'no-cors' mode
       // Note: 'no-cors' means we won't get a readable response JSON, but the request will succeed.
