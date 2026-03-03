@@ -10,9 +10,9 @@ export async function generateMetadata(): Promise<Metadata> {
     const dealerInfo = await getDealerInfo()
 
     return {
-        title: `Tentang ${dealerInfo.dealerName} - Sales Consultant Salemba, Kramat Raya, Raden Saleh`,
-        description: `Profil Dealer Resmi ${dealerInfo.dealerName} di Jl. Kramat Raya. Melayani penjualan mobil listrik BYD untuk wilayah Salemba, Raden Saleh, Senen, dan sekitarnya. Hubungi ${dealerInfo.salesName} sekarang.`,
-        keywords: ['BYD Jakarta Pusat', 'BYD Salemba', 'BYD Kramat Raya', 'BYD Raden Saleh', 'Dealer BYD Jakarta', 'Sales BYD Jakarta Pusat'],
+        title: `Tentang ${dealerInfo.dealerName} - Sales Consultant BYD Terpercaya`,
+        description: `Profil Dealer Resmi ${dealerInfo.dealerName} di ${dealerInfo.address}. Kami siap melayani pembelian mobil listrik BYD. Hubungi ${dealerInfo.salesName} sekarang.`,
+        keywords: ['BYD Jakarta', 'BYD Kebon Jeruk', 'Dealer BYD Jakarta', 'Sales BYD Jakarta'],
     }
 }
 

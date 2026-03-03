@@ -1,8 +1,12 @@
+'use client'
 
 import React from 'react';
 import { HelpCircle } from 'lucide-react';
+import { useData } from '@/contexts/DataContext';
 
 export const HomeFAQ: React.FC = () => {
+  const { dealerInfo } = useData();
+
   return (
     <section className="py-24 bg-slate-50 dark:bg-[#0B1215] transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-8 max-w-4xl">
@@ -18,16 +22,16 @@ export const HomeFAQ: React.FC = () => {
         <div className="space-y-4">
           {[
             {
-              q: "Di mana lokasi dealer BYD Jakarta?",
-              a: "Dealer BYD Jakarta berlokasi di Jl. Kramat Raya No.158, Kenari, Kec. Senen, Kota Jakarta Pusat. Lokasi kami sangat strategis di pusat kota, mudah diakses dari berbagai wilayah Jakarta."
+              q: `Di mana lokasi dealer ${dealerInfo.dealerName}?`,
+              a: `Dealer ${dealerInfo.dealerName} berlokasi di ${dealerInfo.address}. Lokasi kami sangat strategis dan mudah diakses dari berbagai wilayah.`
             },
             {
-              q: "Apakah tersedia unit Test Drive di BYD Jakarta?",
+              q: `Apakah tersedia unit Test Drive di ${dealerInfo.dealerName}?`,
               a: "Ya, kami menyediakan unit Test Drive lengkap untuk BYD Seal, Atto 3, dan Dolphin. Anda bisa melakukan booking jadwal melalui website ini atau menghubungi WhatsApp sales kami."
             },
             {
               q: "Bagaimana layanan purna jual (After Sales) BYD?",
-              a: "BYD Jakarta adalah dealer 3S (Sales, Service, Sparepart). Kami memberikan garansi baterai hingga 8 tahun atau 160.000 km, serta layanan servis gratis dan suku cadang sesuai syarat dan ketentuan yang berlaku."
+              a: `${dealerInfo.dealerName} adalah dealer 3S (Sales, Service, Sparepart). Kami memberikan garansi baterai hingga 8 tahun atau 160.000 km, serta layanan servis gratis dan suku cadang sesuai syarat dan ketentuan yang berlaku.`
             },
             {
               q: "Apakah harga OTR mengikuti wilayah Jakarta atau Jawa Barat?",

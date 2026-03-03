@@ -16,22 +16,24 @@ const spaceGrotesk = Space_Grotesk({
     display: 'swap',
 })
 
+import { dealerData as dealerInfo } from '@/data/dealer'
+
 export const metadata: Metadata = {
-    metadataBase: new URL('https://bydjakpus.com'),
+    metadataBase: new URL(`https://${dealerInfo.domain}`),
     alternates: {
         canonical: './',
     },
     title: {
-        default: 'BYD Jakarta Pusat - Kramat Raya & Salemba | Dealer Resmi Mobil Listrik BYD',
-        template: '%s | BYD Jakarta Pusat'
+        default: `BYD ${dealerInfo.dealerName} | Dealer Resmi Mobil Listrik BYD`,
+        template: `%s | BYD ${dealerInfo.dealerName}`
     },
-    description: 'Dealer Resmi BYD Jakarta Pusat di Jl. Kramat Raya, dekat Salemba & Raden Saleh. Dapatkan penawaran harga terbaik mobil listrik BYD Sealion 7, Seal, Atto 3, dan Dolphin.',
-    keywords: ['BYD Jakarta Pusat', 'BYD Kramat Raya', 'BYD Salemba', 'BYD Raden Saleh', 'Dealer BYD Jakarta', 'BYD Sealion 7', 'BYD Seal', 'BYD Atto 3', 'BYD Dolphin', 'Mobil Listrik Indonesia'],
+    description: `Dealer Resmi BYD di ${dealerInfo.address}. Dapatkan penawaran harga terbaik mobil listrik BYD Sealion 7, Seal, Atto 3, dan Dolphin.`,
+    keywords: ['BYD Jakarta', 'BYD Kebon Jeruk', 'BYD Jakarta Barat', 'Dealer BYD Jakarta', 'BYD Sealion 7', 'BYD Seal', 'BYD Atto 3', 'BYD Dolphin', 'Mobil Listrik Indonesia'],
     openGraph: {
-        title: 'BYD Jakarta | Dealer Resmi Mobil Listrik BYD',
-        description: 'Dealer Resmi BYD Jakarta. Wujudkan impian mobil listrik Anda dengan teknologi BYD Blade Battery. Hubungi kami untuk promo terbaru.',
-        url: 'https://bydjakpus.com',
-        siteName: 'BYD Jakarta',
+        title: `BYD ${dealerInfo.dealerName} | Dealer Resmi Mobil Listrik BYD`,
+        description: `Dealer Resmi BYD ${dealerInfo.dealerName}. Wujudkan impian mobil listrik Anda dengan teknologi BYD Blade Battery. Hubungi kami untuk promo terbaru.`,
+        url: `https://${dealerInfo.domain}`,
+        siteName: `BYD ${dealerInfo.dealerName}`,
         images: [
             {
                 url: '/images/og-image.webp', // Ensure this exists or use a generic one
@@ -84,9 +86,9 @@ export default async function RootLayout({
         address: {
             '@type': 'PostalAddress',
             streetAddress: dealerInfo.address,
-            addressLocality: 'Jakarta Pusat',
+            addressLocality: 'Jakarta Barat',
             addressRegion: 'DKI Jakarta',
-            postalCode: '10320',
+            postalCode: '11520',
             addressCountry: 'ID'
         },
         geo: {
@@ -106,13 +108,12 @@ export default async function RootLayout({
         ],
         priceRange: '$$$',
         areaServed: [
-            "Salemba",
-            "Kramat Raya",
-            "Raden Saleh",
-            "Jakarta Pusat",
-            "Menteng",
-            "Cikini",
-            "Senen"
+            "Kebon Jeruk",
+            "Kedoya",
+            "Jakarta Barat",
+            "DKI Jakarta",
+            "Tangerang",
+            "Banten"
         ]
     }
 

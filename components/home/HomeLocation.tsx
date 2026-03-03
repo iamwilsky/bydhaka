@@ -22,7 +22,7 @@ export const HomeLocation: React.FC = () => {
               Kunjungi Showroom {dealerInfo.dealerName}
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-              Lokasi strategis di Jl. Kramat Raya, hanya 5 menit dari Salemba dan Raden Saleh. Mudah diakses dari berbagai wilayah Jakarta Pusat. Nikmati fasilitas 3S (Sales, Service, Spareparts) terbaik kami.
+              Lokasi strategis di {dealerInfo.address}. Mudah diakses dari berbagai wilayah. Nikmati fasilitas 3S (Sales, Service, Spareparts) terbaik kami.
             </p>
 
             <div className="space-y-6">
@@ -67,8 +67,8 @@ export const HomeLocation: React.FC = () => {
           {/* Map Embed */}
           <div className="h-[400px] md:h-[500px] w-full bg-gray-200 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-slate-700 relative group">
             <iframe
-              title="Peta Lokasi BYD Jakarta"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.2809724680192!2d106.8465762134959!3d-6.189324695399919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f58d90bfb883%3A0xd9c709f95dcc218f!2sMazda%20Raden%20Saleh!5e0!3m2!1sen!2sid!4v1767667917821!5m2!1sen!2sid"
+              title={`Peta Lokasi ${dealerInfo.dealerName}`}
+              src={dealerInfo.mapsUrl}
               width="100%"
               height="100%"
               style={{ border: 0 }}
