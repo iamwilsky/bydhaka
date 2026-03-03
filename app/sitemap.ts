@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { BYD_MODELS } from '@/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://bydjakpus.com'
+    const baseUrl = 'https://bydhaka.com'
     const lastModified = new Date()
 
     // Static pages

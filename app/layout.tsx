@@ -24,14 +24,14 @@ export const metadata: Metadata = {
         canonical: './',
     },
     title: {
-        default: `BYD ${dealerInfo.dealerName} | Dealer Resmi Mobil Listrik BYD`,
+        default: 'Dealer BYD Jakarta Barat (Kebon Jeruk) | Promo Mobil Listrik',
         template: `%s | BYD ${dealerInfo.dealerName}`
     },
-    description: `Dealer Resmi BYD di ${dealerInfo.address}. Dapatkan penawaran harga terbaik mobil listrik BYD Sealion 7, Seal, Atto 3, dan Dolphin.`,
-    keywords: ['BYD Jakarta', 'BYD Kebon Jeruk', 'BYD Jakarta Barat', 'Dealer BYD Jakarta', 'BYD Sealion 7', 'BYD Seal', 'BYD Atto 3', 'BYD Dolphin', 'Mobil Listrik Indonesia'],
+    description: 'Tonton unit BYD M6, Seal, Atto 3 & Dolphin di Dealer Resmi BYD Jakarta Barat (Kebon Jeruk). Booking Test Drive hari ini & dapatkan promo harga OTR!',
+    keywords: ['Dealer BYD Jakarta', 'Dealer BYD Jakarta Barat', 'BYD Kebon Jeruk', 'Showroom BYD Jakarta', 'Showroom BYD Jakarta Barat', 'Dealer Mobil Listrik Jakarta', 'Dealer Resmi BYD Jakarta', 'BYD Kedoya', 'Harga BYD Jakarta', 'Promo BYD Jakarta'],
     openGraph: {
-        title: `BYD ${dealerInfo.dealerName} | Dealer Resmi Mobil Listrik BYD`,
-        description: `Dealer Resmi BYD ${dealerInfo.dealerName}. Wujudkan impian mobil listrik Anda dengan teknologi BYD Blade Battery. Hubungi kami untuk promo terbaru.`,
+        title: 'Dealer BYD Jakarta Barat (Kebon Jeruk) | Promo Mobil Listrik',
+        description: 'Tonton unit BYD M6, Seal, Atto 3 & Dolphin di Dealer Resmi BYD Jakarta Barat (Kebon Jeruk). Booking Test Drive hari ini & dapatkan promo harga OTR!',
         url: `https://${dealerInfo.domain}`,
         siteName: `BYD ${dealerInfo.dealerName}`,
         images: [
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
         google: 'google-site-verification-code', // Add if available
     },
     other: {
-        'og:logo': 'https://bydjakpus.com/web-app-manifest-512x512.png',
+        'og:logo': 'https://bydhaka.com/web-app-manifest-512x512.png',
     }
 }
 
@@ -76,46 +76,49 @@ export default async function RootLayout({
 }) {
     const dealerInfo = await getDealerInfo()
 
-    const jsonLd = {
-        '@context': 'https://schema.org',
-        '@type': 'AutoDealer',
-        '@id': 'https://bydjakpus.com/#dealer',
-        name: dealerInfo.dealerName,
-        image: 'https://bydjakpus.com/images/models/seal/hero/byd-seal-hero.webp',
-        description: `Dealer Resmi ${dealerInfo.dealerName} menyediakan penjualan, servis, dan suku cadang mobil listrik BYD.`,
-        address: {
-            '@type': 'PostalAddress',
-            streetAddress: dealerInfo.address,
-            addressLocality: 'Jakarta Barat',
-            addressRegion: 'DKI Jakarta',
-            postalCode: '11520',
-            addressCountry: 'ID'
-        },
-        geo: {
-            '@type': 'GeoCoordinates',
-            latitude: -6.3768, // Update these if necessary, leaving as is for now or requesting user input if specific coords are known. Better to leave generic or update if user provided. User didn't provide coords. I will stick to updating the URL.
-            longitude: 106.9158
-        },
-        url: 'https://bydjakpus.com',
-        telephone: `+${dealerInfo.salesPhone}`,
-        openingHoursSpecification: [
-            {
-                '@type': 'OpeningHoursSpecification',
-                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                opens: '08:30',
-                closes: '20:00'
-            }
-        ],
-        priceRange: '$$$',
-        areaServed: [
-            "Kebon Jeruk",
-            "Kedoya",
-            "Jakarta Barat",
-            "DKI Jakarta",
-            "Tangerang",
-            "Banten"
-        ]
-    }
+    const jsonLd = [
+        {
+            '@context': 'https://schema.org',
+            '@type': ['AutoDealer', 'LocalBusiness'],
+            '@id': `https://${dealerInfo.domain}/#dealer`,
+            name: `Dealer Resmi BYD Jakarta Barat - ${dealerInfo.dealerName}`,
+            image: `https://${dealerInfo.domain}/images/models/seal/hero/byd-seal-hero.webp`,
+            description: `Dealer Resmi ${dealerInfo.dealerName} melayani penjualan mobil listrik BYD Sealion 7, M6, Seal, Atto 3, dan Dolphin. Tersedia Test Drive & layanan servis di Kebon Jeruk, Jakarta Barat.`,
+            address: {
+                '@type': 'PostalAddress',
+                streetAddress: dealerInfo.address,
+                addressLocality: 'Jakarta Barat',
+                addressRegion: 'DKI Jakarta',
+                postalCode: '11520',
+                addressCountry: 'ID'
+            },
+            geo: {
+                '@type': 'GeoCoordinates',
+                latitude: -6.16204479382514,
+                longitude: 106.76087127498987
+            },
+            url: 'https://bydhaka.com',
+            telephone: `+${dealerInfo.salesPhone}`,
+            openingHoursSpecification: [
+                {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                    opens: '08:30',
+                    closes: '20:00'
+                }
+            ],
+            priceRange: '$$$',
+            areaServed: [
+                "Kebon Jeruk",
+                "Kedoya",
+                "Jakarta Barat",
+                "DKI Jakarta",
+                "Tangerang",
+                "Banten",
+                "Jabodetabek"
+            ]
+        }
+    ]
 
     return (
         <html lang="id" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>

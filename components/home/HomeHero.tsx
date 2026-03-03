@@ -100,14 +100,17 @@ export const HomeHero: React.FC<Props> = ({ initialModels }) => {
               {/* Left Column: Text Content */}
               <div className={`w-full lg:w-1/2 pt-16 md:pt-24 lg:pt-0 z-30 flex flex-col justify-center transition-all duration-1000 delay-300 transform ${index === currentSlide ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
 
-                {/* Badge (Now Semantic H1) */}
+                {/* SEO Optimized H1 (Hidden from view but readable by screen readers & crawlers to keep design sleek) */}
+                <h1 className="sr-only">Dealer Resmi Mobil Listrik BYD Jakarta Barat</h1>
+
+                {/* Badge (Semantic Parapraph or div instead of H1) */}
                 <div className="flex items-center mb-2 md:mb-4">
-                  <h1 className="text-gray-500 dark:text-gray-400 text-[10px] md:text-xs font-semibold uppercase tracking-[0.3em]">
-                    Dealer Resmi BYD Jakarta
-                  </h1>
+                  <span className="text-gray-500 dark:text-gray-400 text-[10px] md:text-xs font-semibold uppercase tracking-[0.3em]">
+                    Pilihan Mobil BYD Terbaik di Jakarta
+                  </span>
                 </div>
 
-                {/* Model Name (Now Semantic H2) */}
+                {/* Model Name (Semantic H2) */}
                 <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-display font-semibold tracking-tight leading-none mb-4 text-slate-900 dark:text-white">
                   {model.name.replace('BYD ', '')}
                 </h2>

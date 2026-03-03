@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
         description: `Dapatkan penawaran terbaik ${model.name} di BYD Jakarta. Jarak tempuh ${model.summaryRange}. Cicilan ringan, test drive tersedia. Hubungi ${dealerInfo.salesName}.`,
         keywords: [model.name, 'Harga ' + model.name, model.name + ' OTR', 'BYD Jakarta', `Promo ${model.name} Jakarta`],
         alternates: {
-            canonical: `https://bydjakpus.com/model/${model.id}`,
+            canonical: `https://bydhaka.com/model/${model.id}`,
         },
         openGraph: {
             title: `${model.name} | ${dealerInfo.dealerName}`,
@@ -61,7 +61,7 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
             {
                 '@type': 'Car',
                 name: model.name,
-                image: `https://bydjakpus.com${model.heroImage}`,
+                image: `https://bydhaka.com${model.heroImage}`,
                 description: model.description,
                 sku: model.id,
                 mpn: model.id,
@@ -76,7 +76,7 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
                 },
                 offers: {
                     '@type': 'AggregateOffer',
-                    url: `https://bydjakpus.com/model/${model.id}`,
+                    url: `https://bydhaka.com/model/${model.id}`,
                     priceCurrency: 'IDR',
                     lowPrice: minPrice,
                     highPrice: maxPrice,
@@ -85,7 +85,7 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
                     availability: 'https://schema.org/InStock',
                     seller: {
                         '@type': 'AutoDealer',
-                        '@id': 'https://bydjakpus.com/#dealer',
+                        '@id': 'https://bydhaka.com/#dealer',
                         name: dealerInfo.dealerName,
                     },
                 },
@@ -97,19 +97,19 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
                         '@type': 'ListItem',
                         position: 1,
                         name: 'Home',
-                        item: 'https://bydjakpus.com',
+                        item: 'https://bydhaka.com',
                     },
                     {
                         '@type': 'ListItem',
                         position: 2,
                         name: 'Models',
-                        item: 'https://bydjakpus.com/#models',
+                        item: 'https://bydhaka.com/#models',
                     },
                     {
                         '@type': 'ListItem',
                         position: 3,
                         name: model.name,
-                        item: `https://bydjakpus.com/model/${model.id}`,
+                        item: `https://bydhaka.com/model/${model.id}`,
                     },
                 ],
             },
