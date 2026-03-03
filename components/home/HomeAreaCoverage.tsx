@@ -8,7 +8,7 @@ export const HomeAreaCoverage: React.FC = () => {
     const { openModal } = useModal();
 
     const areas = [
-        "Salemba", "Kramat Raya", "Raden Saleh", "Menteng", "Cikini", "Matraman", "Senen"
+        "Kebon Jeruk", "Kedoya", "Puri Indah", "Kembangan", "Meruya", "Tomang", "Grogol", "Tangerang"
     ];
 
     return (
@@ -24,11 +24,11 @@ export const HomeAreaCoverage: React.FC = () => {
                         </div>
 
                         <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900 dark:text-white mb-4">
-                            Dealer BYD Terdekat di Salemba, Kramat Raya & Raden Saleh
+                            Dealer BYD Terdekat di Jakarta Barat & Sekitarnya
                         </h2>
 
                         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                            Kami melayani pembelian dan test drive untuk wilayah Jakarta Pusat, khususnya area <strong className="text-slate-900 dark:text-white">Salemba, Kramat Raya, dan Raden Saleh</strong>. Lokasi showroom kami yang strategis memudahkan Anda yang berdomisili atau berkantor di area ini untuk melihat langsung unit BYD Sealion 7, Seal, Atto 3, dan Dolphin.
+                            Kami melayani pembelian dan test drive untuk seluruh wilayah DKI Jakarta dan Jabodetabek, khususnya area <strong className="text-slate-900 dark:text-white">Jakarta Barat, Kebon Jeruk, Kedoya, dan Puri Indah</strong>. Lokasi showroom kami yang strategis memudahkan Anda yang berdomisili atau berkantor di area ini untuk melihat langsung unit BYD Sealion 7, Seal, Atto 3, dan Dolphin.
                         </p>
 
                         <div className="flex flex-wrap gap-2">
@@ -52,7 +52,7 @@ export const HomeAreaCoverage: React.FC = () => {
                                 </div>
                             </div>
                             <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                                Hanya 5-10 menit dari Universitas Indonesia (Salemba) dan Taman Ismail Marzuki (Cikini).
+                                Sangat mudah diakses, hanya beberapa menit dari Pintu Tol Kebon Jeruk / Tol Dalam Kota.
                             </p>
                             <button
                                 onClick={() => openModal('Tanya Lokasi')}
